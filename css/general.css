@@ -1,0 +1,25 @@
+h2 {
+  font-family: "Audiowide";
+  background: #DC3545;
+  background: linear-gradient(0deg, #DC3545 5%, #5398BE 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p, input, label, h1, button {
+  font-family: "Roboto";
+}
+
+.form-control, .form-control:focus, .form-control:active, textarea {
+  box-shadow: none;
+  border: 1px solid #dc3545;
+  background-color: transparent;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: rgb(197, 197, 197);
+}
+
+/*# sourceMappingURL=general.css.map */

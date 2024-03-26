@@ -1,0 +1,52 @@
+h2 {
+  font-family: "Audiowide";
+  background: #DC3545;
+  background: linear-gradient(0deg, #DC3545 5%, #5398BE 80%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+p, input, label, h1, button {
+  font-family: "Roboto";
+}
+
+.form-control, .form-control:focus, .form-control:active, textarea {
+  box-shadow: none;
+  border: 1px solid #dc3545;
+  background-color: transparent;
+  color: white;
+}
+
+.form-control::placeholder {
+  color: rgb(197, 197, 197);
+}
+
+main {
+  background-image: url(/images/background.JPG);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+main .login {
+  backdrop-filter: blur(5px);
+  background-color: rgba(0, 0, 0, 0.259);
+}
+main .login #login, main .login #signup {
+  cursor: pointer;
+}
+
+.active {
+  text-decoration: underline;
+  text-underline-offset: 10px;
+}
+
+.errormessage, .successmessage {
+  display: none;
+}
+
+.input-group-text {
+  border-radius: 0;
+}
+
+/*# sourceMappingURL=login.css.map */

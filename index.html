@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" class="p-0 m-0">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/css/general.css">
+    <title>Document</title>
+</head>
+<body>
+    <header>
+
+    </header>
+    <main class="min-vh-100 d-flex pt-5">
+        <div class="login row  container rounded m-auto p-2 align-self-center align-items-center justify-content-between ">
+            <div class="welcome col-md-6 col-12 p-0 gap-3 d-flex flex-column">
+                <h1 class="text-white display-6">Simplify Your Coding Journey:</h1>
+                <h2 class=" display-1">Join Code REd</h2>
+                
+                <p class="text-white ">Connect, Collaborate, and Create in our vibrant community of web wizards and coding enthusiasts. Join us and elevate your skills, share insights, and ignite innovation!</p>
+            </div>
+            <div class="loginContainer col-md-5 col-12  d-flex flex-column border border-1 border-danger rounded-end gy-3 my-5 ">
+                <div class="logoContainer text-center my-3 ">
+                    <img src="/images/Logo Code Red (3).png"  height="100px" alt="Code red logo">
+                </div>
+                <div class="access row text-center pb-5 ">
+                    <p id="login" class="col fw-bold lead text-white active ">Login</p>
+                    <p id="signup" class="col fw-bold lead text-secondary">Sign up</p>
+                </div>
+              
+                <form class="loginform row gap-5  method="post" action="/auth/login" ">
+                    <div class="input-group col-12">
+                        <div class="col-12">
+                            <p class="errormessage mail text-danger">Please enter a valid email address (only @noroff.no or @stud.noroff.no)</p>
+                            <p class="successmessage mail text-success">Look`s good!!</p>
+                        </div>
+                        <span class="input-group-text text-danger bg-transparent border-danger " id="basic-addon1"><span class="material-symbols-outlined">
+                            alternate_email
+                            </span></span>
+                        <label for="email-login"></label>
+                        <input type="email" id="email-login" name="email" class="form-control rounded-end" placeholder="Your email address" aria-label="Username" aria-describedby="basic-addon1" required >
+                    </div>
+                    <div class="input-group col-12">
+                        <div class="col-12">
+                            <p class="errormessage password text-danger">Please enter a password (minimum 8 caracters)</p>
+                            <p class="successmessage password text-success">Look`s good!!</p>
+                        </div>
+                        <span class="input-group-text text-danger bg-transparent border-danger " id="basic-addon1"><span class="material-symbols-outlined">
+                            fingerprint
+                            </span></span>
+                        <label for="password-login"></label>
+                        <input type="password" id="password-login" name="password" class="form-control border-end-0" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                        <span id="showPassword" class="input-group-text text-danger bg-transparent border border-danger border-start-0 rounded-end pe-auto" id="basic-addon1"><span class="material-symbols-outlined">mystery</span></span>
+                    </div>
+                    <div class="d-flex gap-3 justify-content-center ">
+                        <input type="checkbox" class=" border-0 " value="lsRememberMe" id="rememberMe">
+                        <label class="text-white" for="rememberMe">Remember me</label>
+                    </div>
+                         <button type="submit" id="loginBtn" class="btn btn-danger col-6 m-auto mb-5" disabled>Log in</button>
+                </form>
+                <form class="signupform row gap-5 d-none " method="post" action="/auth/register">
+                    <div class="input-group col-12">
+                        <div class="col-12">
+                            <p class="errormessage name text-danger">Please enter your full name (minimum 5 caracters)</p>
+                            <p class="successmessage name text-success">Look`s good!!</p>
+                        </div>
+                        <span class="input-group-text text-danger bg-transparent border-danger" id="basic-addon1"><span class="material-symbols-outlined">
+                            person</span></span>
+                        <label for="name"></label>
+                        <input type="text" id="name" name="name" class="form-control " placeholder="Full name" aria-label="Name" aria-describedby="basic-addon1" required pattern="^[\w]+$" title="User name must only contain uppercase and lowercase letters, numbers and underscore. Example: Your_Name12345">
+                    </div>
+                    <div class="input-group col-12">
+                        <div class="col-12">
+                            <p class="errormessage mail text-danger">Please enter a valid email address (only @noroff.no or @stud.noroff.no)</p>
+                            <p class="successmessage mail text-success">Look`s good!!</p>
+                        </div>
+                        <span class="input-group-text text-danger bg-transparent border-danger" id="basic-addon1"><span class="material-symbols-outlined">
+                            alternate_email
+                            </span></span>
+                        <label for="email-signup"></label>
+                        <input type="email" id="email-signup" name="email" class="form-control" placeholder="Your email address" aria-label="email" aria-describedby="basic-addon1" required>
+                    </div>
+                    <div class="input-group col-12">
+                        <div class="col-12">
+                            <p class="errormessage password text-danger">Please enter a password (minimum 8 caracters)</p>
+                            <p class="successmessage password text-success">Look`s good!!</p>
+                        </div>
+                        <span class="input-group-text text-danger bg-transparent border-danger" id="basic-addon1"><span class="material-symbols-outlined">
+                            fingerprint
+                            </span></span>
+                        <label for="password-signup"></label>
+                        <input type="password" id="password-signup" name="password" class="form-control border-end-0" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1" required>
+                        <span id="showPassword" class="input-group-text text-danger bg-transparent border border-danger border-start-0 rounded-end pe-auto" id="basic-addon1"><span class="material-symbols-outlined">mystery</span></span>
+                    </div>
+                         <button type="submit" id="registerBtn" class="btn btn-danger col-6 m-auto mb-5" disabled>Register</button>
+                </form>
+                <div class="signupMessage row justify-content-center gap-5 d-none my-5">
+                    <div class="d-none flex-column justify-content-center align-items-center" id="successtext">
+                        <h1 class="text-white text-center"></h1>
+                        <p class="lead text-white" id="userName"></p>
+                        <p class="lead text-white" id="userMail"></p>
+                        <button type="button" id="backBtn" class="btn btn-light col-6 d-flex align-items-center justify-content-center mt-5"><span class="material-symbols-outlined">arrow_back</span><p class="my-0 mx-3">Go to Login</p></button>
+                    </div>
+                    <div class="d-none justify-content-center align-items-center flex-column" id="errortext">
+                        <h1 class=" text-danger text-center display-3"></h1>
+                        <button type="button" id="refreshBtn" class="btn btn-light col-6 d-flex align-items-center justify-content-center mt-5"><span class="material-symbols-outlined text-danger">refresh</span></button>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+    <footer>
+        
+    </footer>
+</body>
+<script type="module" src="/js/home.js"></script>
+<script type="module" src="/js/validations.js"></script>
+<script type="module" src="/js/register.js"></script>
+<script type="module" src="/js/login.js"></script>
+</html>

@@ -1,0 +1,14 @@
+body {
+  background-color: black;
+}
+
+.icons .material-symbols-outlined, #closeIcon {
+  font-size: 2.25em;
+  cursor: pointer;
+}
+
+#searchBar, #feedStarter {
+  display: none;
+}
+
+/*# sourceMappingURL=feed.css.map */
