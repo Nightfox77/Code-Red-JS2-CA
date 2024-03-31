@@ -7,8 +7,16 @@ body {
   cursor: pointer;
 }
 
-#searchBar, #feedStarter {
+textarea:active, textarea:focus {
+  height: 200px;
+}
+
+#searchBar {
   display: none;
+}
+
+.feedStarterContainer, #feedbox {
+  background-color: rgb(13, 13, 13);
 }
 
 /*# sourceMappingURL=feed.css.map */

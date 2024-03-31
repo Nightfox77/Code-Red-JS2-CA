@@ -5,6 +5,12 @@ body {
         font-size: 2.25em;
         cursor: pointer;
 }
-#searchBar, #feedStarter {
+textarea:active, textarea:focus {
+    height: 200px
+}
+#searchBar {
     display: none;
+}
+.feedStarterContainer, #feedbox{
+    background-color: rgb(13, 13, 13);
 }

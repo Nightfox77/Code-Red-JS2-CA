@@ -9,10 +9,10 @@ h2 {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;   
 }
-p, input, label,h1 ,button{
+p, input, label,h1 ,button,h3, #feedStarter{
     font-family: "Roboto";
 }
-.form-control, .form-control:focus, .form-control:active, textarea {
+.form-control, .form-control:focus, .form-control:active, textarea, .form-control-sm {
     box-shadow: none;
     border: 1px solid $primaryRed;
     background-color: transparent;
@@ -20,5 +20,5 @@ p, input, label,h1 ,button{
     
 }
 .form-control::placeholder {
-    color: rgb(197, 197, 197);
+    color: rgba(170, 170, 170, 0.722);
 }

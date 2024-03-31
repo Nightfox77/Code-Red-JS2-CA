@@ -1,7 +1,8 @@
 import { showMessageError } from "./functions.js";
 import { showMessageSuccess } from "./functions.js";
-const API_Base = `https://v2.api.noroff.dev`;
-const API_Auth = `/auth`;
+import { API_Base } from "./constants.js";
+import { API_Auth } from "./constants.js";
+
 const API_Register = `/register`;
 
 const registerUrl = API_Base + API_Auth + API_Register;

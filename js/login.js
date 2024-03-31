@@ -1,7 +1,8 @@
-import * as storage from "../js/functions.js";
-import { showMessageError } from "../js/functions.js";
-const API_Base = `https://v2.api.noroff.dev`;
-const API_Auth = `/auth`;
+import * as storage from "./functions.js";
+import { showMessageError } from "./functions.js";
+import { API_Base } from "./constants.js";
+import { API_Auth } from "./constants.js";
+
 const API_Login = `/login`;
 
 const loginUrl = API_Base + API_Auth + API_Login;
@@ -33,6 +34,9 @@ document.querySelector(".loginform").addEventListener("submit", async function(e
       // Save data to localStorage
       storage.save("token", resultData.accessToken);
       storage.save("email", resultData.email);
+      storage.save("name", resultData.name);
+      const userImage = resultData.avatar;
+      storage.save("userImage", userImage.url);
     console.log(resultData)
       // Redirect to feed page
     window.location.href = "../feed/index.html";

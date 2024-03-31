@@ -19,12 +19,11 @@
         </div>
         <div class="icons d-flex align-items-center gap-3">
             <span id="searchIcon" class="material-symbols-outlined text-danger">search</span>
-            <span id="addIcon" class="material-symbols-outlined text-danger">add_circle</span>
         </div>
     </header>
     <main class="" >
         <div id="searchBar" class=" input-group row d-none m-auto  ">
-            <div class="col-12 col-md-4 d-flex m-auto my-4">
+            <div class="col-11 col-md-4 d-flex m-auto my-4 p-3">
                 <span class="input-group-text bg-transparent border-danger rounded-0 rounded-start " id="basic-addon1"><span class="material-symbols-outlined text-danger">
                     search
                     </span></span>
@@ -33,33 +32,46 @@
                 <span id="closeIcon" class="material-symbols-outlined text-danger">cancel</span>
             </div>
         </div>
-        <div id="feedStarter" class="feedStarter container-fluid justify-content-center ">
-            <div class=" d-flex  flex-column col-11 col-md-4   my-4">
-                <div class="d-flex align-items-center mb-3 gap-3">
-                     <span id="backIcon" class="material-symbols-outlined text-danger">arrow_back</span>
+        <form id="feedStarter" class="feedStarter container-fluid justify-content-center " method="post" >
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-md-4 m-auto  my-4 gap-3 p-3 rounded">
+                <div class="d-flex align-items-center mb-3  gap-3">
                      <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
-                     <p id="username" class="userName text-white m-0 lead"></p> 
+                     <p id="userName" class="userName text-white m-0 "></p> 
                 </div>
-               
-                <div class="form-outline d-flex">
-                    <textarea class="form-control h-100" id="textAreaExample1" rows="10" placeholder="Share your bugs, your projects , your ideas and thoughts..."></textarea>
-                    <label class="form-label" for="textAreaExample"></label>
+                <div id="feedtitle" class="form-outline d-flex">
+                    
+                    <label for="title"></label>
+                    <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-label="title" aria-describedby="basic-addon1" required autocomplete="">
+                </div>
+                <div id="feedbody" class="form-outline d-flex">
+                    <textarea class="form-control " id="body" placeholder="Share your bugs, your projects , your ideas and thoughts..."></textarea>
+                    <label class="form-label" for="body"></label>
+                </div>
+                <div id="feedPic" class="form-outline d-flex ">
+                    <span class="input-group-text text-danger bg-transparent border-danger border-end-0 rounded-end-0 " id="basic-addon1"><span class="material-symbols-outlined">
+                        add_photo_alternate
+                        </span></span>
+                    <label for="addPic"></label>
+                    <input type="text" id="addPic" name="addPic" class="form-control rounded-start-0 " placeholder="Add a Url for your profile picture here..." aria-label="addPic" aria-describedby="basic-addon1" >
                 </div>
                 <div class="row align-self-center mt-3">
                     <button type="submit" class="col btn btn-danger">Post</button>
                 </div>
             </div>
+        </form>
+        <div class="feedcontainer d-flex flex-column col-11 col-md-4 m-auto mt-5">
+            <div class="d-flex justify-content-evenly align-items-center">
+                <h1 class="text-white ">Feed</h1>
+                <select class="form-select-xs h-25 border-danger outline-none bg-black text-danger rounded " aria-label="Default select example">
+                    <option selected>Filter</option>
+                    <option value="1">By date(newest first)</option>
+                    <option value="2">By date(oldest first)</option>
+                    <option value="3">With pictures only</option>
+                </select>
+            </div>
+              <hr class="solid hr text-white "></hr>
         </div>
-        <div class="feedcontainer d-flex col-11 col-md-6 justify-content-evenly align-items-center m-auto mt-5">
-            <h1 class=" text-white ">Feed</h1>
-            <select class="form-select-xs h-25 " aria-label="Default select example">
-                <option selected>Filter</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-        </div>
-        <hr class="solid hr"></hr>
+       
         
 
     </main>
@@ -68,6 +80,8 @@
     </footer>
     
 </body>
-<script type="module" src="/js/feed.js"></script>
-<script type="module" src="/js/getApiKey.js"></script>
+<script type="module" src="/js/Feed/feed.js"></script>
+<script type="module" src="/js/API/getApiKey.js"></script>
+<script type="module" src="/js/API/allPosts.js"></script>
+<script type="module" src="/js/API/createPost.js"></script>
 </html>
