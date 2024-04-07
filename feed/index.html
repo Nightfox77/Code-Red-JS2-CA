@@ -22,6 +22,9 @@
         </div>
     </header>
     <main class="" >
+        <div class="modal justify-content-center align-items-center" >
+           
+        </div>
         <div id="searchBar" class=" input-group row d-none m-auto  ">
             <div class="col-11 col-md-4 d-flex m-auto my-4 p-3">
                 <span class="input-group-text bg-transparent border-danger rounded-0 rounded-start " id="basic-addon1"><span class="material-symbols-outlined text-danger">
@@ -32,8 +35,8 @@
                 <span id="closeIcon" class="material-symbols-outlined text-danger">cancel</span>
             </div>
         </div>
-        <form id="feedStarter" class="feedStarter container-fluid justify-content-center " method="post" >
-            <div class="feedStarterContainer d-flex  flex-column col-11 col-md-4 m-auto  my-4 gap-3 p-3 rounded">
+        <form id="feedStarter" class="feedStarter d-flex  justify-content-center " method="post" >
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-4 my-3   gap-3 p-3 rounded">
                 <div class="d-flex align-items-center mb-3  gap-3">
                      <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
                      <p id="userName" class="userName text-white m-0 "></p> 
@@ -59,9 +62,9 @@
                 </div>
             </div>
         </form>
-        <div class="feedcontainer d-flex flex-column col-11 col-md-4 m-auto mt-5">
+        <div class="feedcontainer d-flex flex-column col-11 col-lg-4 m-auto mt-5 ">
             <div class="d-flex justify-content-evenly align-items-center">
-                <h1 class="text-white ">Feed</h1>
+                <h1 class="text-white m-0 ">Feed</h1>
                 <select class="form-select-xs h-25 border-danger outline-none bg-black text-danger rounded " aria-label="Default select example">
                     <option selected>Filter</option>
                     <option value="1">By date(newest first)</option>
@@ -84,4 +87,5 @@
 <script type="module" src="/js/API/getApiKey.js"></script>
 <script type="module" src="/js/API/allPosts.js"></script>
 <script type="module" src="/js/API/createPost.js"></script>
+<script type="module" src="/js/API/deletePost.js"></script>
 </html>

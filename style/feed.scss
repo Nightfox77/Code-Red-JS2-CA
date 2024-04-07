@@ -1,7 +1,7 @@
 body {
     background-color: black;
 }
-.icons .material-symbols-outlined, #closeIcon {
+.icons .material-symbols-outlined {
         font-size: 2.25em;
         cursor: pointer;
 }
@@ -11,6 +11,15 @@ textarea:active, textarea:focus {
 #searchBar {
     display: none;
 }
-.feedStarterContainer, #feedbox{
-    background-color: rgb(13, 13, 13);
+.feedStarterContainer, .feedbox, .modalcontainer{
+    background-color: rgb(34, 34, 34);
+}
+.feedbox img {
+    max-height: 600px;
+    object-fit: cover;
+}
+.modal {
+    background-color: rgba(0, 0, 0, 0.69);
+    display: none;
+    
 }

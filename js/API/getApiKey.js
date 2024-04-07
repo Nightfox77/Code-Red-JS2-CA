@@ -1,7 +1,7 @@
 import { load } from "../functions.js";
 import { save } from "../functions.js";
-import { API_Base } from "../constants.js";
-import { API_Auth } from "../constants.js";
+import { API_Base } from "./constants.js";
+import { API_Auth } from "./constants.js";
 
 
 

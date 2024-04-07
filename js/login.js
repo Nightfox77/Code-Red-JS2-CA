@@ -1,7 +1,7 @@
 import * as storage from "./functions.js";
 import { showMessageError } from "./functions.js";
-import { API_Base } from "./constants.js";
-import { API_Auth } from "./constants.js";
+import { API_Base } from "./API/constants.js";
+import { API_Auth } from "./API/constants.js";
 
 const API_Login = `/login`;
 

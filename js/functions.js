@@ -31,15 +31,12 @@ function lengthCheck(value, len) {
     }
 }
 function mailValidation(mailValue) {
-   
     const regEx = /\S+@\S+\.\S+/;
     const matchingPattern = regEx.test(mailValue);
     
     if (!matchingPattern) {
         return false; 
     }
-
-   
     const validDomains = ['noroff.no', 'stud.noroff.no'];
     const domain = mailValue.split('@')[1];
     return validDomains.some(validDomain => domain.endsWith(validDomain));
@@ -181,13 +178,8 @@ export function showMessageSuccess() {
     signupMessage.classList.add("d-flex");
     successtext.classList.remove("d-none");
     successtext.classList.add("d-flex");
-    successtextH1.innerHTML = ` Your account was successfully registred. You can now log in`;
-    
-    
-
-
-    
-    }
+    successtextH1.innerHTML = ` Your account was successfully registred. You can now log in`
+}
 export function save(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
@@ -205,3 +197,10 @@ export function load(key) {
 export function remove(key) {
     localStorage.removeItem(key)
   }
+export function extractHashtags(text) {
+    // Regular expression to match hashtags (#word)
+    const regex = /#\w+/g;
+    // Extract hashtags from text using regex
+    return text.match(regex) || []; // Return array of hashtags or empty array if none found
+  }
+

@@ -7,7 +7,7 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-p, input, label, h1, button, h3, #feedStarter {
+p, input, label, h1, button, h3, #feedStarter, select {
   font-family: "Roboto";
 }
 
