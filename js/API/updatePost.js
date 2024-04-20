@@ -1,13 +1,17 @@
 import { API_Base, API_Social, API_Posts } from "./constants.js";
 import { load } from "../functions.js";
 import { modal, successModalHTML } from "../Modals/constants.js";
+import { boxId } from "../Profile/profile.js";
 
 
 
-modal.addEventListener("click", async function createPost(event) {
+modal.addEventListener("click", async function updatePost(event) {
     event.preventDefault();
 
-    if (event.target.matches("#submitPostBtn")) { 
+    if (event.target.matches("#updatePostBtn")) {
+        console.log("click") 
+        const idUrl = API_Base + API_Social + API_Posts + "/" + boxId ; 
+            console.log(idUrl)
         const formData = {
             title: document.querySelector("#title").value,
             body: document.querySelector("#body").value,
@@ -17,8 +21,9 @@ modal.addEventListener("click", async function createPost(event) {
         };
 
         try {
-            const response = await fetch(API_Base + API_Social + API_Posts, {
-                method: "POST",
+            
+            const response = await fetch (idUrl, {
+                method: "PUT",
                 headers: {
                     "Content-Type": "application/json",
                     Authorization: `Bearer ${load("token")}`,

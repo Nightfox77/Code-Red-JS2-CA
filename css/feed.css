@@ -7,10 +7,23 @@ body {
   cursor: pointer;
 }
 
-textarea:active, textarea:focus {
-  height: 200px;
+textarea {
+  height: 0;
+  overflow: hidden;
 }
 
+textarea:active, textarea:focus {
+  animation: expandTextarea 0.5s ease-out forwards;
+}
+
+@keyframes expandTextarea {
+  from {
+    height: 0;
+  }
+  to {
+    height: 200px;
+  }
+}
 #searchBar {
   display: none;
 }

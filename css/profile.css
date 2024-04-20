@@ -1,0 +1,11 @@
+#profileBanner {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 200px;
+}
+#profileBanner .imageContainer {
+  transform: translateY(95%);
+}
+
+/*# sourceMappingURL=profile.css.map */

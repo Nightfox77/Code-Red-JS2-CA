@@ -5,3 +5,7 @@ export function showModal() {
     modal.style.display = "flex";
     body.style.overflow = "hidden";
 }
+export function hideModal() {
+    modal.style.display = "none";
+    body.style.overflow = "auto";
+}

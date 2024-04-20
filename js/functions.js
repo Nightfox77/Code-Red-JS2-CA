@@ -17,11 +17,6 @@ export function setupInputPlaceholders() {
         });
     });
 }
-/* handles the active class change */
-
-   
-
-
 function lengthCheck(value, len) {
     if(value.trim().length > len) {
         return true;
@@ -198,9 +193,9 @@ export function remove(key) {
     localStorage.removeItem(key)
   }
 export function extractHashtags(text) {
-    // Regular expression to match hashtags (#word)
+  
     const regex = /#\w+/g;
-    // Extract hashtags from text using regex
-    return text.match(regex) || []; // Return array of hashtags or empty array if none found
+ 
+    return text.match(regex) || [];
   }
 

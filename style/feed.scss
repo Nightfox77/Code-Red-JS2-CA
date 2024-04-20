@@ -5,8 +5,23 @@ body {
         font-size: 2.25em;
         cursor: pointer;
 }
+textarea {
+    height: 0;
+    overflow: hidden;
+    
+}
+
 textarea:active, textarea:focus {
-    height: 200px
+    animation: expandTextarea .5s ease-out forwards;
+}
+
+@keyframes expandTextarea {
+    from {
+        height: 0;
+    }
+    to {
+        height: 200px;
+    }
 }
 #searchBar {
     display: none;

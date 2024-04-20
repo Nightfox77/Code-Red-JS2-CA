@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/feed.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <title>Document</title>
+    </head>
+<body class="">
+    <header class="container-fluid d-flex justify-content-evenly align-items-center border-bottom border-danger ">
+        <div class="imageContainer py-3">
+            <img src="/images/Logo Code Red (3).png" height="70px" alt="Code Red logo">
+        </div>
+        <div class="icons d-flex align-items-center gap-3">
+            <span id="searchIcon" class="material-symbols-outlined text-danger">search</span>
+        </div>
+    </header>
+    <main class="" >
+        <div class="modal justify-content-center align-items-center" >
+           
+        </div>
+        <div id="searchBar" class=" input-group row d-none m-auto  ">
+            <div class="col-11 col-md-4 d-flex m-auto my-4 p-3">
+                <span class="input-group-text bg-transparent border-danger rounded-0 rounded-start " id="basic-addon1"><span class="material-symbols-outlined text-danger">
+                    search
+                    </span></span>
+                <label for="search"></label>
+                <input type="search" id="search" class="form-control rounded-0 rounded-end" placeholder="Search..." aria-label="search" aria-describedby="basic-addon1">
+                <span id="closeIcon" class="material-symbols-outlined text-danger">cancel</span>
+            </div>
+        </div>
+        <div id="profileBanner" class="d-flex col-11 col-lg-6 rounded m-auto mt-5 mb-5">
+            <div class="imageContainer m-auto">
+                <img src="" class="rounded-circle border border-white border-4" width="100px" height="100px" alt="">
+            </div>
+        </div>
+        <div id="profileInfo" class="d-flex flex-column col pt-5 justify-content-center align-items-center">
+            <h3 id="userName" class="text-white m-auto"></h3>
+                <div id="profileStats" class="d-flex justify-content-center align-items-center mt-3 gap-3 col-11 col-md-6">
+                    
+
+                </div>
+        </div>
+        
+        <form id="feedStarter" class="feedStarter d-flex  justify-content-center " method="post" >
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-6 my-3   gap-3 p-3 rounded">
+                <div class="d-flex align-items-center justify-content-center   gap-3">
+                     <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
+                     
+                     <div id="feedtitle" class="form-outline d-flex col-9">
+                        <label for="dummyinput"></label>
+                        <input type="text" id="dummyinput" name="dummyinput" class="form-control" placeholder="What`s on your mind ??" aria-label="dummyinput" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                
+                
+            </div>
+        </form>
+        <div id="profilePosts" class="feedcontainer d-flex flex-column col-11 col-lg-6 m-auto mt-5 ">
+            <div  class="d-flex justify-content-evenly align-items-center">
+                <h1 class="text-white m-0 ">Your Feed</h1>
+                <select class="form-select-xs h-25 border-danger outline-none bg-black text-danger rounded " aria-label="Default select example">
+                    <option selected>Filter</option>
+                    <option value="1">By date(newest first)</option>
+                    <option value="2">By date(oldest first)</option>
+                    <option value="3">With pictures only</option>
+                </select>
+            </div>
+              <hr class="solid hr text-white "></hr>
+        </div>
+       
+        
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+<script type="module" src="/js/API/loadProfile.js"></script>
+<script type="module" src="/js/Profile/profile.js"></script>
+<script type="module" src="/js/API/createPost.js"></script>
+<script type="module" src="/js/API/deletePost.js"></script>
+<script type="module" src="/js/API/updatePost.js"></script>
+</html>

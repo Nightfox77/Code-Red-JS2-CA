@@ -36,33 +36,20 @@
             </div>
         </div>
         <form id="feedStarter" class="feedStarter d-flex  justify-content-center " method="post" >
-            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-4 my-3   gap-3 p-3 rounded">
-                <div class="d-flex align-items-center mb-3  gap-3">
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-6 my-3   gap-3 p-3 rounded">
+                <div class="d-flex align-items-center justify-content-center   gap-3">
                      <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
-                     <p id="userName" class="userName text-white m-0 "></p> 
+                     
+                     <div id="feedtitle" class="form-outline d-flex col-9">
+                        <label for="dummyinput"></label>
+                        <input type="text" id="dummyinput" name="dummyinput" class="form-control" placeholder="What`s on your mind ??" aria-label="dummyinput" aria-describedby="basic-addon1">
+                    </div>
                 </div>
-                <div id="feedtitle" class="form-outline d-flex">
-                    
-                    <label for="title"></label>
-                    <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-label="title" aria-describedby="basic-addon1" required autocomplete="">
-                </div>
-                <div id="feedbody" class="form-outline d-flex">
-                    <textarea class="form-control " id="body" placeholder="Share your bugs, your projects , your ideas and thoughts..."></textarea>
-                    <label class="form-label" for="body"></label>
-                </div>
-                <div id="feedPic" class="form-outline d-flex ">
-                    <span class="input-group-text text-danger bg-transparent border-danger border-end-0 rounded-end-0 " id="basic-addon1"><span class="material-symbols-outlined">
-                        add_photo_alternate
-                        </span></span>
-                    <label for="addPic"></label>
-                    <input type="text" id="addPic" name="addPic" class="form-control rounded-start-0 " placeholder="Add a Url for your profile picture here..." aria-label="addPic" aria-describedby="basic-addon1" >
-                </div>
-                <div class="row align-self-center mt-3">
-                    <button type="submit" class="col btn btn-danger">Post</button>
-                </div>
+                
+                
             </div>
         </form>
-        <div class="feedcontainer d-flex flex-column col-11 col-lg-4 m-auto mt-5 ">
+        <div id="feedPosts" class="feedcontainer d-flex flex-column col-11 col-lg-4 m-auto mt-5 ">
             <div class="d-flex justify-content-evenly align-items-center">
                 <h1 class="text-white m-0 ">Feed</h1>
                 <select class="form-select-xs h-25 border-danger outline-none bg-black text-danger rounded " aria-label="Default select example">

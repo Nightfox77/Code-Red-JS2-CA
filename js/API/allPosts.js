@@ -1,6 +1,4 @@
-import { API_Base } from "./constants.js";
-import { API_Social } from "./constants.js";
-import { API_Posts } from "./constants.js";
+import { API_Base, API_Social, API_Posts } from "./constants.js";
 import { load } from "../functions.js";
 
 export async function getAllPosts(page = 1) {
@@ -27,7 +25,7 @@ export async function displayPosts(currentPage) {
         const result = await getAllPosts(currentPage);
         const resultData = result.data;
             console.log(resultData);
-            const feedContainer = document.querySelector(".feedcontainer");
+            const feedContainer = document.querySelector("#feedPosts");
             for(let i = 0; i < Math.min(resultData.length, 10); i++) {
                 let userImage ="";
                 let userText = "";
@@ -39,11 +37,11 @@ export async function displayPosts(currentPage) {
                 }
                 if(resultData[i].media === null || resultData[i].media.length === 0) {
                     
-                    userImage = `<img src="/images/background.JPG"  alt="default image">`;
+                    userImage = `<img src="/images/defaultimage.png"  alt="default image">`;
                 } else {
                     const image = resultData[i].media;
                     
-                        userImage += `<img src= ${image.url}  alt="default image" onerror="this.src='/images/background.JPG'">`;
+                        userImage += `<img src= ${image.url}  alt="default image" onerror="this.src='/images/defaultimage.png'">`;
                     
                 }
                 
@@ -55,8 +53,7 @@ export async function displayPosts(currentPage) {
                                                 <hr class="m-0 text-secondary"></hr>
                                                 <p class="text-danger m-0">#${resultData[i].tags}</p>
                                             <div class="d-flex text-secondary justify-content-end gap-2">
-                                                <span  class="edit material-symbols-outlined">edit</span>
-                                                <span  class="delete material-symbols-outlined">delete</span>
+                                               
                                                 
                                             </div>
                                             </div>`;
