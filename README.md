@@ -1,6 +1,6 @@
 # Your project title
 
-![image](https://github.com/Nightfox77/Code-Red-JS2-CA/blob/js2/images/successIcon.png)
+![image](https://github.com/Nightfox77/Code-Red-JS2-CA/blob/js2/images/Screenshot.png)
 
 A simple overview of the use/purpose of the project.
 
