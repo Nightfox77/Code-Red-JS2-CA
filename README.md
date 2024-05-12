@@ -63,9 +63,9 @@ Here you can detail any information you want to provide regarding contributing t
 ## Contact
 
 
-# LinkedIn profile - https://www.linkedin.com/in/michael-b%C3%A4uml-045924221
+### LinkedIn profile - https://www.linkedin.com/in/michael-b%C3%A4uml-045924221
 
 
-# Portfolio website - https://www.mb-web.no/
+### Portfolio website - https://www.mb-web.no/
 
 
