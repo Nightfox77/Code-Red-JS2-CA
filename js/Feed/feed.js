@@ -1,31 +1,46 @@
-import { setupInputPlaceholders } from "../functions.js";
-import { displayPosts } from "../API/allPosts.js";
-import { searchIcon, closeIcon } from "../constants.js";
-import { showSearchBar, hideSearchBar } from "./functions.js";
+
+import {  setupInputPlaceholders } from "../functions.js";
+import { modal, postformModalHTML, body } from "../Modals/constants.js";
+import { showModal, hideModal } from "../Modals/functions.js";
 
 setupInputPlaceholders();
 
-searchIcon.onclick = showSearchBar;
-closeIcon.onclick = hideSearchBar;
+const dummyInput = document.querySelector("#dummyinput");
 
-
-
-let currentPage = 1;
-document.addEventListener("DOMContentLoaded", function() {
-    displayPosts();
+dummyInput.addEventListener("click", function() {
+    
+        
+        modal.innerHTML = postformModalHTML;
+        showModal();
+    
 })
 
-function isBottomOfPage() {
-    return (window.innerHeight + window.scrollY) >= document.body.offsetHeight;
-}
-async function loadMorePosts() {
-    if (isBottomOfPage()) {
-        currentPage++; 
-        await displayPosts(currentPage); 
+modal.addEventListener("click", function(event) {
+        if(event.target.matches("#closePostform")) {
+                hideModal();
+        }
+        
+})
+
+
+
+body.addEventListener("click", function(event) {
+    if (event.target.matches("#filterIcon")) {
+        
+        const filterBar = document.querySelector("#filterbar");
+        if (filterBar.style.display === "none" || filterBar.style.display === "") {
+            filterBar.style.display = "flex"; // Show filter bar
+        } else {
+            filterBar.style.display = "none"; // Hide filter bar
+        }
+       
     }
-}
+    if(event.target.matches("#logout") || (event.target.closest("#logout"))) {
 
+    
+        localStorage.clear();
+        }
+});
 
-window.addEventListener('scroll', loadMorePosts);
 
 

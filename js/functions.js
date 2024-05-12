@@ -1,14 +1,15 @@
+
+
 /* hiding the placeholder element when input is clicked */
 export function setupInputPlaceholders() {
     document.addEventListener("DOMContentLoaded", function() {
         const inputs = document.querySelectorAll(".form-control");
-
         inputs.forEach(input => {
             input.addEventListener("focus", function() {
                 input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
                 input.setAttribute("placeholder", "");
             });
-
+            
             input.addEventListener("blur", function() {
                 if (input.value === "") {
                     input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
@@ -17,6 +18,7 @@ export function setupInputPlaceholders() {
         });
     });
 }
+
 function lengthCheck(value, len) {
     if(value.trim().length > len) {
         return true;
@@ -191,11 +193,22 @@ export function load(key) {
 
 export function remove(key) {
     localStorage.removeItem(key)
-  }
+}
 export function extractHashtags(text) {
   
     const regex = /#\w+/g;
  
     return text.match(regex) || [];
-  }
+}
 
+
+
+export function logoutHandler(event) {
+
+    if(event.target.matches("#logout") || (event.target.closest("#logout"))) {
+
+    
+    localStorage.clear();
+    }
+
+}

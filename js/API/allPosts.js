@@ -1,30 +1,42 @@
 import { API_Base, API_Social, API_Posts } from "./constants.js";
 import { load } from "../functions.js";
+import { createAPIKey } from "./getApiKey.js";
 
-export async function getAllPosts(page = 1) {
+
+async function getAllPosts(page = 1) {
     const postsPerPage = 10;
     const API_AllPosts = API_Posts + `?page=${page}&limit=${postsPerPage}`;
-    const response = await fetch(API_Base + API_Social + API_AllPosts, {
-        method: "GET",
-        headers: {
-            
-            Authorization:  `Bearer ${load("token")}`,
-            "X-Noroff-API-Key": `${load("ApiKey")}`                
-        }
-        
-    })
-    console.log(API_Base + API_Social + API_AllPosts);
-    return await response.json();
+
+    
+    await createAPIKey();
    
+    try {
+        const response = await fetch(API_Base + API_Social + API_AllPosts, {
+            method: "GET",
+            headers: {
+                Authorization:  `Bearer ${load("token")}`,
+                "X-Noroff-API-Key": `${load("ApiKey")}`                
+            }
+        });
 
+        if (!response.ok) {
+            throw new Error('Failed to fetch posts');
+        }
 
+        return await response.json();
+    } catch (error) {
+        console.log('Error fetching posts:', error);
+       
+    }
 }
+
 
 export async function displayPosts(currentPage) {
     try {
+        
         const result = await getAllPosts(currentPage);
         const resultData = result.data;
-            console.log(resultData);
+            
             const feedContainer = document.querySelector("#feedPosts");
             for(let i = 0; i < Math.min(resultData.length, 10); i++) {
                 let userImage ="";
@@ -44,18 +56,31 @@ export async function displayPosts(currentPage) {
                         userImage += `<img src= ${image.url}  alt="default image" onerror="this.src='/images/defaultimage.png'">`;
                     
                 }
-                
-                feedContainer.innerHTML += `<div id="${resultData[i].id}"  class="feedbox d-flex flex-column p-3 my-3 rounded">
+                const hashtags = userText.match(/#\w+/g) || []; //hashtag recognition from body text
+                const originalTags = resultData[i].tags || []; //the tags from the API
+                const allTags = [
+                    ...originalTags.map(tag => tag.startsWith('#') ? tag : `#${tag}`),
+                    ...hashtags.map(tag => tag.startsWith('#') ? tag : `#${tag}`)
+                  ];
+                const comments = resultData[i]._count.comments;
+                const reactions = resultData[i]._count.reactions;
+                feedContainer.innerHTML += `<div id="${resultData[i].id}"  class="feedbox d-flex flex-column  p-3 my-3 rounded">
                                             ${userImage}
+                                            <div class="d-flex flex-column text-wrap ">
                                                 <h3 class="text-white m-0 mt-3">${resultData[i].title}</h3>
                                                 <p class="fw-light text-secondary fs-6">Created: ${resultData[i].created.substring(0, 10)}</p>
-                                                <p class="text-white fw-light">${userText}</p>
-                                                <hr class="m-0 text-secondary"></hr>
-                                                <p class="text-danger m-0">#${resultData[i].tags}</p>
-                                            <div class="d-flex text-secondary justify-content-end gap-2">
-                                               
-                                                
+                                                <p class="text-white fw-light  ">${userText}</p>
                                             </div>
+                                                <hr class="m-0 text-secondary"></hr>
+                                                <p class="text-danger m-0 mt-2">${allTags.join(', ')}</p>
+                                                <div class="row d-flex justify-content-center mt-3">
+                                                    <p class=" col-3 text-white d-flex gap-2"><span class="material-symbols-outlined">
+                                                    chat_bubble
+                                                    </span> ${comments}</p>
+                                                    <p class=" col-3 text-white d-flex gap-2 "><span class="material-symbols-outlined text-danger">
+                                                    favorite
+                                                    </span> ${reactions}</p>
+                                                </div>
                                             </div>`;
             }
             
@@ -63,6 +88,6 @@ export async function displayPosts(currentPage) {
        
         
     } catch (error) {
-        console.error('Error fetching posts:', error);
+        
     }
 }

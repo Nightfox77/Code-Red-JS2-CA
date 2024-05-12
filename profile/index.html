@@ -14,27 +14,27 @@
         <title>Document</title>
     </head>
 <body class="">
-    <header class="container-fluid d-flex justify-content-evenly align-items-center border-bottom border-danger ">
+    <header class="container-fluid d-flex flex-column justify-content-evenly align-items-center border-bottom border-danger  ">
         <div class="imageContainer py-3">
             <img src="/images/Logo Code Red (3).png" height="70px" alt="Code Red logo">
         </div>
-        <div class="icons d-flex align-items-center gap-3">
-            <span id="searchIcon" class="material-symbols-outlined text-danger">search</span>
-        </div>
+       
+        <ul class="nav nav-tabs d-flex border-0 ">
+            <li class="nav-item">
+              <a class="nav-link text-secondary d-flex gap-2  " aria-current="page" href="/feed/index.html"><span class="material-symbols-outlined">feed</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link bg-danger text-white border-danger  active  d-flex gap-2" href="/profile/index.html"><span class="material-symbols-outlined">person</span></a>
+            </li>
+            <li class="nav-item">
+                <a id="logout" class="nav-link text-secondary d-flex gap-2" href="/index.html"><span class="material-symbols-outlined">logout</span></a>
+              </li>
+           
+        </ul>
     </header>
     <main class="" >
         <div class="modal justify-content-center align-items-center" >
            
-        </div>
-        <div id="searchBar" class=" input-group row d-none m-auto  ">
-            <div class="col-11 col-md-4 d-flex m-auto my-4 p-3">
-                <span class="input-group-text bg-transparent border-danger rounded-0 rounded-start " id="basic-addon1"><span class="material-symbols-outlined text-danger">
-                    search
-                    </span></span>
-                <label for="search"></label>
-                <input type="search" id="search" class="form-control rounded-0 rounded-end" placeholder="Search..." aria-label="search" aria-describedby="basic-addon1">
-                <span id="closeIcon" class="material-symbols-outlined text-danger">cancel</span>
-            </div>
         </div>
         <div id="profileBanner" class="d-flex col-11 col-lg-6 rounded m-auto mt-5 mb-5">
             <div class="imageContainer m-auto">
@@ -66,12 +66,7 @@
         <div id="profilePosts" class="feedcontainer d-flex flex-column col-11 col-lg-6 m-auto mt-5 ">
             <div  class="d-flex justify-content-evenly align-items-center">
                 <h1 class="text-white m-0 ">Your Feed</h1>
-                <select class="form-select-xs h-25 border-danger outline-none bg-black text-danger rounded " aria-label="Default select example">
-                    <option selected>Filter</option>
-                    <option value="1">By date(newest first)</option>
-                    <option value="2">By date(oldest first)</option>
-                    <option value="3">With pictures only</option>
-                </select>
+              
             </div>
               <hr class="solid hr text-white "></hr>
         </div>
@@ -84,9 +79,11 @@
     </footer>
     
 </body>
-<script type="module" src="/js/API/loadProfile.js"></script>
-<script type="module" src="/js/Profile/profile.js"></script>
-<script type="module" src="/js/API/createPost.js"></script>
-<script type="module" src="/js/API/deletePost.js"></script>
-<script type="module" src="/js/API/updatePost.js"></script>
+
+<script type="module" defer src="/js/Profile/profile.js"></script>
+<script type="module" defer src="/js/API/createPost.js"></script>
+<script type="module" defer src="/js/API/deletePost.js"></script>
+<script type="module" defer src="/js/API/updatePost.js"></script>
+
+
 </html>

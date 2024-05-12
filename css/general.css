@@ -22,4 +22,15 @@ p, input, label, h1, button, h3, #feedStarter, select {
   color: rgba(170, 170, 170, 0.722);
 }
 
+.modal {
+  background-color: rgba(0, 0, 0, 0.69);
+  display: none;
+  height: 100vh;
+  max-width: 100vw;
+}
+
+#filterbar {
+  display: none;
+}
+
 /*# sourceMappingURL=general.css.map */

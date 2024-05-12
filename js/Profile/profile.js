@@ -3,11 +3,9 @@ import { postformModalHTML, deleteModalHTML, editformModalHTML } from "../Modals
 import { modal,body } from "../Modals/constants.js";
 import { load, save } from "../functions.js";
 import { displayProfilePosts } from "../API/allPostByProfile.js";
-import { userImageContainer,searchIcon, closeIcon} from "../constants.js";
-import { showSearchBar, hideSearchBar } from "../Feed/functions.js"
+import { userImageContainer} from "../constants.js";
+import { loadProfile } from "../API/loadProfile.js";
 
-searchIcon.onclick = showSearchBar;
-closeIcon.onclick = hideSearchBar;
 
 
 const dummyInput = document.querySelector("#dummyinput");
@@ -26,31 +24,43 @@ body.addEventListener("click", function(event) {
         }
         
 })
-userImageContainer.src = load("userImage");
-const bannerImageContainer = document.querySelector("#profileBanner");
-bannerImageContainer.style.backgroundImage = `url(${load("bannerImage")})`;
+document.addEventListener('DOMContentLoaded', async function() {
+        await loadProfile();
+        userImageContainer.src = load("userImage");
+        const bannerImageContainer = document.querySelector("#profileBanner");
+        if(bannerImageContainer) {
+                bannerImageContainer.style.backgroundImage = `url(${load("bannerImage")})`;
+        }
 
-const bannerProfileImage = document.querySelector("#profileBanner .imageContainer img");
-bannerProfileImage.src = load("userImage");
 
-const userName = document.querySelector("#userName");
-userName.innerHTML = load("name");
+        const bannerProfileImage = document.querySelector("#profileBanner .imageContainer img");
+        if(bannerProfileImage) {
+                bannerProfileImage.src = load("userImage");
+        }
 
-const profileInfo = document.querySelector("#profileStats");
-profileInfo.innerHTML = `<div class="statBox w-25 d-flex flex-column text-white text-center">
-                                <p class="lead">Posts</p>
-                                <p>${load("profilePosts")}
-                        </div>
-                        <div class="statBox w-25 d-flex flex-column text-white text-center">
-                                <p class="lead">Followers</p>
-                                <p>${load("profileFollowers")}
-                        </div>
-                        <div class="statBox w-25 d-flex flex-column text-white text-center">
-                                <p class="lead">Following</p>
-                                <p>${load("profileFollowing")}
-                        </div>`;
+        const userName = document.querySelector("#userName");
+        if(userName) {
+                userName.innerHTML = load("name");
+        }
+        const profileInfo = document.querySelector("#profileStats");
+        if(profileInfo) {
+                
+        profileInfo.innerHTML = `<div class="statBox w-25 d-flex flex-column text-white text-center">
+                                        <p class="lead">Posts</p>
+                                        <p>${load("profilePosts")}
+                                </div>
+                                <div class="statBox w-25 d-flex flex-column text-white text-center">
+                                        <p class="lead">Followers</p>
+                                        <p>${load("profileFollowers")}
+                                </div>
+                                <div class="statBox w-25 d-flex flex-column text-white text-center">
+                                        <p class="lead">Following</p>
+                                        <p>${load("profileFollowing")}
+                                </div>`;
+        }
 
-displayProfilePosts();
+});
+
 export let boxId
 body.addEventListener("click", function(event) {
     if (event.target.matches(".delete")) {
@@ -80,7 +90,6 @@ body.addEventListener("click", function(event) {
 
 
                 boxId = feedbox.getAttribute("id");
-                console.log(boxId);
                 const postTitle = feedbox.querySelector(".posttitle");
                 const postText = feedbox.querySelector(".postbody");
                 const postImage = feedbox.querySelector("img")
@@ -98,3 +107,5 @@ body.addEventListener("click", function(event) {
             
         }
     });
+
+        displayProfilePosts()

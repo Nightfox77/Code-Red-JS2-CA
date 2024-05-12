@@ -37,8 +37,8 @@ document.querySelector(".loginform").addEventListener("submit", async function(e
       storage.save("name", resultData.name);
       const userImage = resultData.avatar;
       storage.save("userImage", userImage.url);
-    console.log(resultData)
-      // Redirect to feed page
+   
+      
     window.location.href = "../feed/index.html";
   } else {
       // Handle login error
@@ -50,7 +50,7 @@ document.querySelector(".loginform").addEventListener("submit", async function(e
 
 
 const passwordInput = document.querySelector("#password-login");
-const showPasswordIcon = document.querySelector("#showPassword");
+const showPasswordIcon = document.querySelector("#showPasswordLogin");
 
 showPasswordIcon.addEventListener("mouseover", function showPassword() {
   passwordInput.setAttribute("type", "text");

@@ -24,10 +24,6 @@ textarea:active, textarea:focus {
     height: 200px;
   }
 }
-#searchBar {
-  display: none;
-}
-
 .feedStarterContainer, .feedbox, .modalcontainer {
   background-color: rgb(34, 34, 34);
 }
@@ -37,9 +33,9 @@ textarea:active, textarea:focus {
   object-fit: cover;
 }
 
-.modal {
-  background-color: rgba(0, 0, 0, 0.69);
-  display: none;
+.text-wrap {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
 }
 
 /*# sourceMappingURL=feed.css.map */

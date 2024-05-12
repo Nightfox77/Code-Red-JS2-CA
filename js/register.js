@@ -34,7 +34,6 @@ document.querySelector(".signupform").addEventListener("submit", async function(
          showMessageSuccess();
           userName.innerHTML = `${signupData.name}`;
           userMail.innerHTML = `${signupData.email}`;
-         console.log(result.data);
         
           
       } else {
@@ -58,7 +57,7 @@ button.addEventListener("click", function refresh() {
 })
 
 const passwordInput = document.querySelector("#password-signup");
-const showPasswordIcon = document.querySelector("#showPassword");
+const showPasswordIcon = document.querySelector("#showPasswordSignup");
 
 showPasswordIcon.addEventListener("mouseover", function showPassword() {
   passwordInput.setAttribute("type", "text");

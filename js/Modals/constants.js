@@ -28,7 +28,7 @@ export const errorModalHTML =    `<div id="successModal" class="modalcontainer d
                                         <img src="../images/errorIcon.png" width="100px" height="100px">
                                     </div>`
 export const postformModalHTML = `
-                                    <form id="postformModal" class="modalcontainer d-flex flex-column  justify-content-center col-11 col-md-4 " method="post" >
+                                    <form id="postformModal" class="modalcontainer d-flex flex-column  justify-content-center col-11 col-md-6 col-lg-4 " method="post" >
                                     <div class="d-flex justify-content-end p-2">
                                     <span id="closePostform" class="material-symbols-outlined text-light fs-3 ">cancel</span>
                                     </div>
@@ -44,7 +44,7 @@ export const postformModalHTML = `
                                             <input type="text" id="title" name="title" class="form-control" placeholder="Title" aria-label="title" aria-describedby="basic-addon1" required autocomplete="">
                                         </div>
                                         <div id="feedbody" class="form-outline d-flex">
-                                            <textarea class="form-control " id="body" placeholder="Share your bugs, your projects , your ideas and thoughts..."></textarea>
+                                            <textarea class="form-control " id="body" placeholder="Share your bugs, your projects , your ideas and thoughts... Just write your # in here as well"></textarea>
                                             <label class="form-label" for="body"></label>
                                         </div>
                                         <div id="feedPic" class="form-outline d-flex ">
@@ -93,3 +93,17 @@ export const editformModalHTML = `
                                             </div>
                                         </div>
                                         </form>`
+
+export const searchModal = `  <form  class="modalcontainer d-flex flex-column  justify-content-center col-11 col-md-4" >
+                                <div id="searchBar" class=" input-group row m-auto  ">
+                                <div class="col-11  d-flex m-auto my-4 p-3">
+                                   
+                                    <label for="search"></label>
+                                    <input type="search" id="search" class="form-control rounded-0 rounded-start border-end-0 " placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1">
+                                    <div class="input-group-append">
+                                    <button id="searchBtn" class="btn d-flex rounded-0 rounded-end border-danger text-white" type="submit"><span  class="material-symbols-outlined ">search</span></a></button>
+                                    </div>
+                                    <span id="closeIcon" class="material-symbols-outlined text-white">cancel</span>
+                                </div>
+                                </div>
+                                </form>`
