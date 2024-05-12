@@ -42,9 +42,10 @@ npm install bootstrap
 npm install sass
 ```
 ```
-npm install live-server
+npm install -g live-server
 ```
-npm install run dev
+npm install --save-dev npm-run-all
+
 ### Running
 
 
@@ -61,8 +62,6 @@ Here you can detail any information you want to provide regarding contributing t
 ## Contact
 
 
-
-
-[My LinkedIn page](www.linkedin.com)
+LinkedIn profile - https://www.linkedin.com/in/michael-b%C3%A4uml-045924221
 
 
