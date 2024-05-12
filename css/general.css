@@ -7,11 +7,11 @@ h2 {
   -webkit-text-fill-color: transparent;
 }
 
-p, input, label, h1, button {
+p, input, label, h1, button, h3, #feedStarter, select {
   font-family: "Roboto";
 }
 
-.form-control, .form-control:focus, .form-control:active, textarea {
+.form-control, .form-control:focus, .form-control:active, textarea, .form-control-sm {
   box-shadow: none;
   border: 1px solid #dc3545;
   background-color: transparent;
@@ -19,7 +19,18 @@ p, input, label, h1, button {
 }
 
 .form-control::placeholder {
-  color: rgb(197, 197, 197);
+  color: rgba(170, 170, 170, 0.722);
+}
+
+.modal {
+  background-color: rgba(0, 0, 0, 0.69);
+  display: none;
+  height: 100vh;
+  max-width: 100vw;
+}
+
+#filterbar {
+  display: none;
 }
 
 /*# sourceMappingURL=general.css.map */

@@ -1,10 +1,36 @@
 body {
     background-color: black;
 }
-.icons .material-symbols-outlined, #closeIcon {
+.icons .material-symbols-outlined {
         font-size: 2.25em;
         cursor: pointer;
 }
-#searchBar, #feedStarter {
-    display: none;
+textarea {
+    height: 0;
+    overflow: hidden;
+    
+}
+
+textarea:active, textarea:focus {
+    animation: expandTextarea .5s ease-out forwards;
+}
+
+@keyframes expandTextarea {
+    from {
+        height: 0;
+    }
+    to {
+        height: 200px;
+    }
+}
+.feedStarterContainer, .feedbox, .modalcontainer{
+    background-color: rgb(34, 34, 34);
+}
+.feedbox img {
+    max-height: 600px;
+    object-fit: cover;
+}
+.text-wrap {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
 }

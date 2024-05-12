@@ -1,7 +1,8 @@
 import { showMessageError } from "./functions.js";
 import { showMessageSuccess } from "./functions.js";
-const API_Base = `https://v2.api.noroff.dev`;
-const API_Auth = `/auth`;
+import { API_Base } from "./API/constants.js";
+import { API_Auth } from "./API/constants.js";
+
 const API_Register = `/register`;
 
 const registerUrl = API_Base + API_Auth + API_Register;
@@ -33,7 +34,6 @@ document.querySelector(".signupform").addEventListener("submit", async function(
          showMessageSuccess();
           userName.innerHTML = `${signupData.name}`;
           userMail.innerHTML = `${signupData.email}`;
-         console.log(result.data);
         
           
       } else {
@@ -57,7 +57,7 @@ button.addEventListener("click", function refresh() {
 })
 
 const passwordInput = document.querySelector("#password-signup");
-const showPasswordIcon = document.querySelector("#showPassword");
+const showPasswordIcon = document.querySelector("#showPasswordSignup");
 
 showPasswordIcon.addEventListener("mouseover", function showPassword() {
   passwordInput.setAttribute("type", "text");

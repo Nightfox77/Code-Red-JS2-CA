@@ -1,7 +1,8 @@
-import * as storage from "../js/functions.js";
-import { showMessageError } from "../js/functions.js";
-const API_Base = `https://v2.api.noroff.dev`;
-const API_Auth = `/auth`;
+import * as storage from "./functions.js";
+import { showMessageError } from "./functions.js";
+import { API_Base } from "./API/constants.js";
+import { API_Auth } from "./API/constants.js";
+
 const API_Login = `/login`;
 
 const loginUrl = API_Base + API_Auth + API_Login;
@@ -33,8 +34,11 @@ document.querySelector(".loginform").addEventListener("submit", async function(e
       // Save data to localStorage
       storage.save("token", resultData.accessToken);
       storage.save("email", resultData.email);
-    console.log(resultData)
-      // Redirect to feed page
+      storage.save("name", resultData.name);
+      const userImage = resultData.avatar;
+      storage.save("userImage", userImage.url);
+   
+      
     window.location.href = "../feed/index.html";
   } else {
       // Handle login error
@@ -46,7 +50,7 @@ document.querySelector(".loginform").addEventListener("submit", async function(e
 
 
 const passwordInput = document.querySelector("#password-login");
-const showPasswordIcon = document.querySelector("#showPassword");
+const showPasswordIcon = document.querySelector("#showPasswordLogin");
 
 showPasswordIcon.addEventListener("mouseover", function showPassword() {
   passwordInput.setAttribute("type", "text");

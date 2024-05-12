@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/node_modules/bootstrap/dist/css/bootstrap.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        <link rel="stylesheet" href="/css/general.css">
+        <link rel="stylesheet" href="/css/feed.css">
+        <link rel="stylesheet" href="/css/profile.css">
+        <title>Document</title>
+    </head>
+<body class="">
+    <header class="container-fluid d-flex flex-column justify-content-evenly align-items-center border-bottom border-danger  ">
+        <div class="imageContainer py-3">
+            <img src="/images/Logo Code Red (3).png" height="70px" alt="Code Red logo">
+        </div>
+       
+        <ul class="nav nav-tabs d-flex border-0 ">
+            <li class="nav-item">
+              <a class="nav-link text-secondary d-flex gap-2  " aria-current="page" href="/feed/index.html"><span class="material-symbols-outlined">feed</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link bg-danger text-white border-danger  active  d-flex gap-2" href="/profile/index.html"><span class="material-symbols-outlined">person</span></a>
+            </li>
+            <li class="nav-item">
+                <a id="logout" class="nav-link text-secondary d-flex gap-2" href="/index.html"><span class="material-symbols-outlined">logout</span></a>
+              </li>
+           
+        </ul>
+    </header>
+    <main class="" >
+        <div class="modal justify-content-center align-items-center" >
+           
+        </div>
+        <div id="profileBanner" class="d-flex col-11 col-lg-6 rounded m-auto mt-5 mb-5">
+            <div class="imageContainer m-auto">
+                <img src="" class="rounded-circle border border-white border-4" width="100px" height="100px" alt="">
+            </div>
+        </div>
+        <div id="profileInfo" class="d-flex flex-column col pt-5 justify-content-center align-items-center">
+            <h3 id="userName" class="text-white m-auto"></h3>
+                <div id="profileStats" class="d-flex justify-content-center align-items-center mt-3 gap-3 col-11 col-md-6">
+                    
+
+                </div>
+        </div>
+        
+        <form id="feedStarter" class="feedStarter d-flex  justify-content-center " method="post" >
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-6 my-3   gap-3 p-3 rounded">
+                <div class="d-flex align-items-center justify-content-center   gap-3">
+                     <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
+                     
+                     <div id="feedtitle" class="form-outline d-flex col-9">
+                        <label for="dummyinput"></label>
+                        <input type="text" id="dummyinput" name="dummyinput" class="form-control" placeholder="What`s on your mind ??" aria-label="dummyinput" aria-describedby="basic-addon1">
+                    </div>
+                </div>
+                
+                
+            </div>
+        </form>
+        <div id="profilePosts" class="feedcontainer d-flex flex-column col-11 col-lg-6 m-auto mt-5 ">
+            <div  class="d-flex justify-content-evenly align-items-center">
+                <h1 class="text-white m-0 ">Your Feed</h1>
+              
+            </div>
+              <hr class="solid hr text-white "></hr>
+        </div>
+       
+        
+
+    </main>
+    <footer>
+
+    </footer>
+    
+</body>
+
+<script type="module" defer src="/js/Profile/profile.js"></script>
+<script type="module" defer src="/js/API/createPost.js"></script>
+<script type="module" defer src="/js/API/deletePost.js"></script>
+<script type="module" defer src="/js/API/updatePost.js"></script>
+
+
+</html>

@@ -1,14 +1,15 @@
+
+
 /* hiding the placeholder element when input is clicked */
 export function setupInputPlaceholders() {
     document.addEventListener("DOMContentLoaded", function() {
         const inputs = document.querySelectorAll(".form-control");
-
         inputs.forEach(input => {
             input.addEventListener("focus", function() {
                 input.setAttribute("data-placeholder", input.getAttribute("placeholder"));
                 input.setAttribute("placeholder", "");
             });
-
+            
             input.addEventListener("blur", function() {
                 if (input.value === "") {
                     input.setAttribute("placeholder", input.getAttribute("data-placeholder"));
@@ -17,10 +18,6 @@ export function setupInputPlaceholders() {
         });
     });
 }
-/* handles the active class change */
-
-   
-
 
 function lengthCheck(value, len) {
     if(value.trim().length > len) {
@@ -31,15 +28,12 @@ function lengthCheck(value, len) {
     }
 }
 function mailValidation(mailValue) {
-   
     const regEx = /\S+@\S+\.\S+/;
     const matchingPattern = regEx.test(mailValue);
     
     if (!matchingPattern) {
         return false; 
     }
-
-   
     const validDomains = ['noroff.no', 'stud.noroff.no'];
     const domain = mailValue.split('@')[1];
     return validDomains.some(validDomain => domain.endsWith(validDomain));
@@ -181,18 +175,13 @@ export function showMessageSuccess() {
     signupMessage.classList.add("d-flex");
     successtext.classList.remove("d-none");
     successtext.classList.add("d-flex");
-    successtextH1.innerHTML = ` Your account was successfully registred. You can now log in`;
-    
-    
-
-
-    
-    }
+    successtextH1.innerHTML = ` Your account was successfully registred. You can now log in`
+}
 export function save(key, value) {
     localStorage.setItem(key, JSON.stringify(value));
 }
 
-export function loadToken(key) {
+export function load(key) {
     try {
         const value = localStorage.getItem(key);
         return JSON.parse(value);
@@ -202,6 +191,24 @@ export function loadToken(key) {
     }
   }
 
-export function removeToken(key) {
+export function remove(key) {
     localStorage.removeItem(key)
-  }
+}
+export function extractHashtags(text) {
+  
+    const regex = /#\w+/g;
+ 
+    return text.match(regex) || [];
+}
+
+
+
+export function logoutHandler(event) {
+
+    if(event.target.matches("#logout") || (event.target.closest("#logout"))) {
+
+    
+    localStorage.clear();
+    }
+
+}

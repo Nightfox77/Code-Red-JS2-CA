@@ -13,53 +13,68 @@
         <title>Document</title>
     </head>
 <body class="">
-    <header class="container-fluid d-flex justify-content-evenly align-items-center border-bottom border-danger ">
+    <header class="container-fluid d-flex flex-column justify-content-evenly align-items-center border-bottom border-danger ">
         <div class="imageContainer py-3">
             <img src="/images/Logo Code Red (3).png" height="70px" alt="Code Red logo">
         </div>
-        <div class="icons d-flex align-items-center gap-3">
-            <span id="searchIcon" class="material-symbols-outlined text-danger">search</span>
-            <span id="addIcon" class="material-symbols-outlined text-danger">add_circle</span>
-        </div>
+        <ul class="nav nav-tabs d-flex justify-content-between border-0 ">
+            <li class="nav-item">
+              <a class="nav-link bg-danger text-white border-danger d-flex gap-2 active " aria-current="page" href="/feed/index.html"><span class="material-symbols-outlined">feed</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary d-flex gap-2" href="/profile/index.html"><span class="material-symbols-outlined">person</span></a>
+            </li>
+            <li>
+            <a  class="nav-link text-secondary d-flex gap-2" href="#"> <span id="searchIcon" class="material-symbols-outlined ">search</span></a>
+            </li>
+            <li class="nav-item">
+                <a id="logout" class="nav-link text-secondary d-flex gap-2" href="/index.html"><span class="material-symbols-outlined">logout</span></a>
+              </li>
+          </ul>
     </header>
     <main class="" >
-        <div id="searchBar" class=" input-group row d-none m-auto  ">
-            <div class="col-12 col-md-4 d-flex m-auto my-4">
-                <span class="input-group-text bg-transparent border-danger rounded-0 rounded-start " id="basic-addon1"><span class="material-symbols-outlined text-danger">
-                    search
-                    </span></span>
-                <label for="search"></label>
-                <input type="search" id="search" class="form-control rounded-0 rounded-end" placeholder="Search..." aria-label="Username" aria-describedby="basic-addon1">
-                <span id="closeIcon" class="material-symbols-outlined text-danger">cancel</span>
-            </div>
+        <div class="modal justify-content-center align-items-center" >
+           
         </div>
-        <div id="feedStarter" class="feedStarter container-fluid justify-content-center ">
-            <div class=" d-flex  flex-column col-11 col-md-4   my-4">
-                <div class="d-flex align-items-center mb-3 gap-3">
-                     <span id="backIcon" class="material-symbols-outlined text-danger">arrow_back</span>
+       
+        <form id="feedStarter" class="feedStarter d-flex  justify-content-center " method="post" >
+            <div class="feedStarterContainer d-flex  flex-column col-11 col-lg-6 my-3   gap-3 p-3 rounded">
+                <div class="d-flex align-items-center justify-content-center   gap-3">
                      <img id="userPic" src="" height="50px" width="50px" class="rounded-circle" alt="Profilepicture">
-                     <p id="username" class="userName text-white m-0 lead"></p> 
+                     
+                     <div id="feedtitle" class="form-outline d-flex col-9">
+                        <label for="dummyinput"></label>
+                        <input type="text" id="dummyinput" name="dummyinput" class="form-control" placeholder="What`s on your mind ??" aria-label="dummyinput" aria-describedby="basic-addon1">
+                    </div>
                 </div>
-               
-                <div class="form-outline d-flex">
-                    <textarea class="form-control h-100" id="textAreaExample1" rows="10" placeholder="Share your bugs, your projects , your ideas and thoughts..."></textarea>
-                    <label class="form-label" for="textAreaExample"></label>
-                </div>
-                <div class="row align-self-center mt-3">
-                    <button type="submit" class="col btn btn-danger">Post</button>
-                </div>
+                
+                
+            </div>
+        </form>
+        <div class="col-11 col-lg-6 m-auto">
+            <div class="d-flex text-center align-items-center">
+                <h1 class="text-white m-auto">Feed</h1>
+                <span id="filterIcon" class="material-symbols-outlined me-0 text-danger ">filter_list</span>
+            </div>
+            <div class="justify-content-end mt-3" id="filterbar">
+                
+                    <div class="col-6 col-md-4 col-lg-4  d-flex  ">
+                    
+                        <label for="filter"></label>
+                        <input type="search" id="filter" class="form-control rounded-0 rounded-start border-end-0 p-0 ps-2" placeholder="Filter by tags" aria-label="filter" aria-describedby="basic-addon1">
+                        <div class="input-group-append">
+                        <button  class="btn d-flex rounded-0 rounded-end border-danger text-white p-0 " type="submit"><span id="filterBtn" class="material-symbols-outlined">chevron_right</span>
+                        </div>
+                    
+                    </div>
+                
             </div>
         </div>
-        <div class="feedcontainer d-flex col-11 col-md-6 justify-content-evenly align-items-center m-auto mt-5">
-            <h1 class=" text-white ">Feed</h1>
-            <select class="form-select-xs h-25 " aria-label="Default select example">
-                <option selected>Filter</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+          <hr class="solid hr text-white "></hr>
+        <div id="feedPosts" class="feedcontainer d-flex flex-column col-11 col-lg-6 m-auto mt-5 ">
+           
         </div>
-        <hr class="solid hr"></hr>
+       
         
 
     </main>
@@ -68,6 +83,10 @@
     </footer>
     
 </body>
-<script type="module" src="/js/feed.js"></script>
-<script type="module" src="/js/getApiKey.js"></script>
+<script type="module" defer src="/js/Feed/feed.js"></script>
+<script type="module" defer src="/js/API/getApiKey.js"></script>
+<script type="module" defer src="/js/API/allPosts.js"></script>
+<script type="module" defer src="/js/API/createPost.js"></script>
+<script type="module" defer src="/js/API/deletePost.js"></script>
+<script type="module" defer src="/js/Feed/searchFeed.js"></script>
 </html>
