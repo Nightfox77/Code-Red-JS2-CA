@@ -44,8 +44,9 @@ npm install sass
 ```
 npm install -g live-server
 ```
+```
 npm install --save-dev npm-run-all
-
+```
 ### Running
 
 
